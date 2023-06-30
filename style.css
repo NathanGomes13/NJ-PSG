@@ -1,0 +1,835 @@
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   list-style: none;
+   list-style-type: none;
+   text-decoration: none;
+   text-rendering: optimizeLegibility;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+/* font-family: 'Roboto Slab', serif; */
+/* font-family: 'Poppins', sans-serif; */
+    overflow-x: hidden;
+}
+.rob{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+.rob-slab{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+button:focus{
+    outline: none;
+}
+.display-4{
+    font-size: calc(1.85rem + 2vh) !important;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none !important;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Poppins', sans-serif !important;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+}
+.bttn{
+    padding: 10px 20px;
+    transition-duration: 0.15s;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid black;
+
+    text-decoration: none;
+    border-radius: 0;
+    background-color: white;
+    color: black;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+.bttn:hover{
+    text-decoration: none;
+    border-radius: 40px;
+    background-color: black;
+    color: white;
+}
+/* HEADER  */
+.topo{
+    width: 100%;
+    padding: 12px 0;
+    position: fixed;
+    z-index: 999;
+}
+.scrolled{
+    background: black;
+    transition-duration: 0.4s;
+}
+
+/* // Header Section */
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 100;
+   width: 100%;
+   height: auto;
+   margin: 0 auto;
+   transition: all 0.35s ease;
+}
+.header a{
+    
+   color: white;
+}
+.header.on-scroll {
+    background-color: black;
+    box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+ }
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   column-gap: 1rem;
+   width: 100%;
+   height: 4.25rem;
+   margin: 0 auto;
+}
+
+.header .logo {
+   max-width: 250px;
+   height: 50px;
+   display: flex;
+   align-items: flex-end;
+    gap: 10px;
+}
+.header .logo img{
+    width: auto;
+    height: 100%;
+}
+.header .logo h2{
+    color: white;
+    transition-duration: 0.1s;
+}
+.header .logo h2:hover{
+    color: white;
+    letter-spacing: 0.1em;
+}
+.menu {
+   position: fixed;
+   top: -100%;
+   left: 0;
+   width: 100%;
+   height: auto;
+   padding: 4rem 0 3rem;
+   overflow: hidden;
+   transition: all 0.4s ease-in-out;
+}
+.menu.is-active {
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+.menu-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+
+}
+.menu-link a{
+    text-transform: uppercase;
+}
+.menu-link:hover{
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.menu-block {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+    user-select: none;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: auto;
+    padding: 0.65rem 1.5rem;
+    border-radius: 3rem;
+    text-transform: capitalize;
+    color: white;
+    background-color: blue;
+    box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    transition: all 0.3s ease-in-out;
+}
+/* // Responsive Media Query */
+@media only screen and (min-width: 48rem) {
+    .menu{
+        position: relative;
+        top: 0;
+        width: auto;
+        height: auto;
+        padding: 0rem;
+        margin-left: auto;
+        background: none;
+        box-shadow: none;
+    }
+    .menu-inner {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+        margin: 0 auto;
+    }
+    .menu-link {
+        text-transform: uppercase;
+    }
+    .menu-block {
+        margin-left: 2rem;
+    }
+    
+}
+/* // Responsive Media Query */
+@media only screen and (max-width: 48rem) {
+    .menu.is-active{
+        background-color: #000000d5;
+    }
+    .menu.is-active .menu-item:first-of-type{
+        border-top: 1px solid #ffffff46;
+    }
+    .menu.is-active .menu-item{
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ffffff46;
+        text-align: center;
+    }
+    .menu.is-active .menu-link{
+        padding: 2px 0;
+        border-bottom: 1px solid #00000000;
+        text-transform: uppercase;
+    }
+    .menu.is-active a.menu-link{
+        line-height: 5em;
+    }
+    .menu.is-active .menu-link:hover{
+        color: white;
+        border-bottom: 1px solid white;
+    }
+
+    
+    .header .logo {
+        flex-direction: row-reverse;
+    }
+}
+
+
+.burger{
+   position: relative;
+   display: block;
+   cursor: pointer;
+   user-select: none;
+   order: -1;
+   z-index: 10;
+   width: 1.75rem;
+   height: 1rem;
+   border: none;
+   outline: none;
+   background: none;
+   visibility: visible;
+   transform: rotate(0deg);
+   transition: 0.35s ease;
+
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+.burger-line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 11;
+}
+/* // Responsive Media Query */
+@media only screen and (min-width: 48rem) {
+    .burger{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+/* BANNER  */
+.banner{
+    background: url(imagens/NEYMAR\ BG\ HEADER.svg) no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: flex-end;
+}
+.banner .container{
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px 50px 20px;
+}
+.banner .stk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner .perfil{
+    display: flex;
+    flex-direction: column;
+}
+.banner .stk i{
+    font-size: 50px;
+}
+/* LOGOS  */
+.logos{
+    background: black;
+    /* background-image: linear-gradient(-45deg,  #0310e8, #c90000); */
+    padding: 20px 0;
+}
+.logos .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+.logos img{
+    width: 109px;
+    height: auto;
+}
+/* SOBRE  */
+.sobre::before{
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(imagens/sobre/fundo-branco-abstrato_23-2148817571.webp) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+}
+.sobre{
+    position: relative;
+}
+.sobre .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+}
+.sobre img{
+    position: relative;
+    flex: 30%;
+    width: 200px;
+    height: auto;
+    pointer-events: none;
+}
+.sobre .content{
+    width: 100%;
+}
+.sobre .sobre-content{
+    display: flex;
+    align-items: flex-start;
+    gap: 150px;
+}
+.sobre .container h3{
+    margin-bottom: 1em;
+}
+.sobre .content h2{
+    border-left: 4px solid black;
+    padding: 0 20px;
+}
+.sobre .content p{
+    max-width: 100%;
+    height: auto;
+    font-size: calc(0.7rem + 1vh);
+}
+/* EQUIPE  */
+.equipe::before{
+    background: linear-gradient(45deg, rgb(9, 34, 77) 0%, rgb(8, 29, 65) 50%, rgb(148, 0, 0) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity: 0.7;
+  }
+.equipe{
+    background: url(imagens/equipes/bg.webp);
+    /* background: linear-gradient(45deg, rgb(9, 34, 77) 0%, rgb(8, 29, 65) 70%, rgb(148, 0, 0) 100%); */
+    background-size: cover;
+    color: white;
+    box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.75);
+    position: relative;
+}
+.equipe .card-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+    transition-duration: 0.2s;
+    transform: scale3d(1,1,1);
+}
+.equipe .card-team:hover{
+    transform: scale3d(1.1 ,1.1 ,1);
+}
+.equipe .content{
+    width: 100%;
+    padding: 20px 0 0 0;
+}
+.equipe .content-santos{
+    background-image: linear-gradient(to right, #00000000, black, #00000000);
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.equipe .content-barca{
+    background-image: linear-gradient(to right, #00000000, #a82626, #00000000);
+    border-top: 2px solid #214392;
+    border-bottom: 2px solid #214392;
+}
+.equipe .content-psg{
+    background-image: linear-gradient(to right, #00000000, #214392, #00000000);
+    border-top: 2px solid #ff4848;
+    border-bottom: 2px solid #ff4848;
+}
+.equipe .card-team .img{
+    margin-bottom: 30px;
+    background: url(imagens/equipes/nj\ santos.jpeg)no-repeat center center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    filter: drop-shadow(0px 0px 5px black);
+    transition-duration: 0.3s;
+}
+.equipe .card-team:hover .img1{
+    filter: drop-shadow(0px 0px 5px #c9c9c9b7);
+}
+.equipe .card-team:hover .img2{
+    filter: drop-shadow(0px 0px 5px #f7666679);
+}
+.equipe .card-team:hover .img3{
+    filter: drop-shadow(0px 0px 5px #3b71ee6b);
+}
+/* 
+.equipe .card-1{
+    background: url(imagens/equipes/camisa\ barca.jfif)no-repeat bottom center;
+    background-size: cover;
+}
+.equipe .card-2{
+    background: url(imagens/equipes/wallpaper-de-futebol-camisa-do-barca.jpg)no-repeat bottom center;
+    background-size: cover;
+}
+.equipe .card-3{
+    background: url(imagens/equipes/paris-saint-german-psg7-576x1024.jpg)no-repeat center center;
+    background-size: cover;
+}  */
+
+.equipe .card-team .img1{
+    background: url(imagens/equipes/render\ do\ neymar\ 16.png)no-repeat center center;
+    background-size: cover;
+}
+.equipe .card-team .img2{
+    background: url(imagens/equipes/barcelonaneymar.png)no-repeat left top;
+    background-size: cover;
+}
+.equipe .card-team .img3{
+    background: url(imagens/equipes/neymar\ psg.webp)no-repeat center center;
+    background-size: cover;
+}
+
+
+/* NO PSG  */
+.nopsg::before{
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(imagens/sobre/fundo-branco-abstrato_23-2148817571.webp) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+}
+.nopsg{
+    position: relative;
+}
+.nopsg .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+.nopsg .sobre-content{
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.nopsg img{
+    flex: 40%;
+    max-width: 420px;
+    height: auto;
+    pointer-events: none;
+}
+.nopsg .content{
+    flex: 50%;
+}
+.nopsg .container h2{
+    border-left: 4px solid black;
+    padding: 0 20px;
+}
+.nopsg .container p{
+    font-size: calc(0.7rem + 1vh);
+    word-wrap: break-word;
+}
+
+
+/* TITULOS  */
+
+.titulos .bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    width: 100%;
+    max-width: 100%;
+    height: 90%;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+.titulos::before{
+    background: linear-gradient(45deg, rgb(9, 34, 77) 0%, rgb(8, 29, 65) 70%, rgb(121, 0, 0) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity: 0.9;
+    z-index: -1;
+}
+.titulos{
+    /* background: linear-gradient(45deg, rgba(30,39,59,1) 0%, rgba(46,59,88,1) 70%, rgba(8,143,180,1) 100%); */
+    background: url(imagens/taças/bg-fundo.jpg) no-repeat center center;
+    background-size: cover;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border-top: 4px solid black;
+    position: relative;
+    z-index: 0;
+}
+.titulos h1:first-of-type{
+    margin-top: 50px;
+}
+.titulos h5{
+    text-align: center;
+    line-height: 75px;
+    font-size: calc(1.8rem + 2vh);
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+.titulos .santos{
+    border-color: white;
+    color: white;
+}
+.titulos .barcelona{
+    border-color: #f76666;
+    color: #f76666;
+}
+.titulos .psg{
+    border-color: #3b71ee;
+    color: #3b71ee;
+}
+.titulos .brasil{
+    border-color: #ebff79;
+    color: #ebff79;
+}
+.titulos .feitos{
+    border-color: #7fff6e;
+    color: white;
+}
+
+/* taças  */
+.titulos h5:first-of-type{
+    margin-top: 150px;
+}
+.titulos .tacas-group{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 220px;
+    justify-content: space-evenly;
+    position: relative;
+}
+.titulos .taca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+    position: relative;
+    min-height: 140px;
+}
+.titulos .taca img:hover{
+    transform: scale3d(1.08, 1.08, 1);
+}
+.titulos .taca:hover .overnumber{
+    transform: scale3d(1.07, 1.07, 1);
+}
+.titulos .taca h6{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+.titulos .taca img{
+    width: auto;
+    height: 170px;
+    margin: 25px 0;
+    transition-duration: 0.3s;
+    transform: scale3d(1, 1, 1);
+}
+.titulos .overnumber{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #2e3b58;
+    font-size: 35px;
+    transition-duration: 0.25s;
+    transform: scale3d(1, 1, 1);
+    z-index: 2;
+    pointer-events: none;
+}
+.titulos .taca p{
+    margin-top: 20px;
+    color: white;
+}
+
+/* neymar titulos  */
+.titulos .tacas-group .nj-titulo-santos{
+    position: absolute;
+    top: -60%;
+    right: -320px;
+    z-index: 3;
+    width: auto;
+    height: 550px;
+    filter: drop-shadow(0px 0px 5px white);
+    pointer-events: none;
+}.titulos .tacas-group .nj-titulo-barcelona{
+    position: absolute;
+    top: -160px;
+    left: -200px;
+    z-index: 3;
+    width: auto;
+    height: 530px;
+    filter: drop-shadow(0px 0px 5px #f76666);
+    pointer-events: none;
+}.titulos .tacas-group .nj-titulo-psg{
+    position: absolute;
+    top: -160px;
+    right: -190px;
+    z-index: 3;
+    width: auto;
+    height: 515px;
+    filter: drop-shadow(0px 0px 5px #3b71ee);
+    pointer-events: none;
+}.titulos .tacas-group .nj-titulo-brasil{
+    position: absolute;
+    top: -180px;
+    left: -220px;
+    z-index: 3;
+    width: auto;
+    height: 550px;
+    filter: drop-shadow(0px 0px 5px #ebff79);
+    pointer-events: none;
+}.titulos .tacas-group .nj-titulo-feitos{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-70%);
+    z-index: 3;
+    width: auto;
+    height: 550px;
+    z-index: -1;
+    opacity: 0.5;
+    pointer-events: none;
+}
+.titulos .feitos .container-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+.titulos .feitos{
+    margin: 0 100px;
+}
+.titulos .feitos .content{
+    width: 42%;
+    margin-bottom: 150px;
+}
+.titulos .feitos .content ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 0 0 0 20px;
+    margin-top: 10px;
+}
+/* FOOTER  */
+footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+footer .container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+footer .dtl{
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 1px;
+}
+footer .container .logos{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+}
+footer .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    gap: 20px;
+    align-items: center;
+}
+footer .content .redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .content ul{
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    list-style-type: none;
+}
+footer .content ul img{
+    width: 40px;
+}
+
+
+
+@media screen and (max-width: 1770px) {
+    .titulos .tacas-group .nj-titulo-santos, .titulos .tacas-group .nj-titulo-psg{
+        display: none;
+    }
+}
+@media screen and (max-width: 1220px) {
+    .sobre .display-4{
+        margin-top: 0px;
+        text-align: end;
+    }
+    .sobre .content{
+        margin-top: 20px;
+    }
+    .titulos .container{
+        padding: 0 10px;
+    }
+    .titulos .feitos{
+        margin: 0 20px;
+        padding: 0 10px;
+    }
+    .nopsg img{
+        display: none;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .sobre img{
+        display: none;
+    }
+    .sobre .content{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 990px) {
+    .titulos .feitos img{
+        display: none;
+    }
+    .titulos .feitos .content{
+        width: 100%;
+    }
+    footer .content{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 650px) {
+    .nopsg{
+        padding: 20px;
+    }
+    .sobre{
+        padding: 20px;
+    }
+    .titulos .feitos{
+        margin: 0;
+    }
+}
